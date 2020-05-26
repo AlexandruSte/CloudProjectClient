@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter} from "react-router-dom";
+import {CookiesProvider, useCookies} from "react-cookie";
+import CustomLayout from "./Components/Layout/CustomLayout";
+import Login from "./Components/Login";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [cookies] = useCookies(['email']);
+
+    const RenderApp = () => {
+        if ('email' in cookies && cookies['email'] !== undefined && cookies['email'] !== '')
+            return <CustomLayout/>
+        else {
+            return <Login/>
+        }
+    }
+
+    return (
+        <BrowserRouter>
+            <CookiesProvider>
+                <RenderApp/>
+            </CookiesProvider>
+        </BrowserRouter>
+    );
 }
 
 export default App;
