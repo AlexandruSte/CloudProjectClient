@@ -14,10 +14,6 @@ const GoogleMaps = () => {
     const [loading2, setLoading2] = useState(true);
 
     useEffect(() => {
-        setCenter({a: 2});
-        console.log(center);
-        setCenter(15);
-        console.log(center);
         setLoading1(true);
         setLoading2(true);
         axios.get('/getActive', {

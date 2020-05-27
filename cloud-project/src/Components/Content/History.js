@@ -40,7 +40,7 @@ const History = () => {
                     style={{width: "60%", margin: "0 auto", marginBottom: "50px"}}
                 >
                     <p style={{textAlign: "start"}}>
-                        {order.description}
+                        {order.msg}
                     </p>
                     <p
                         style={{textAlign: "end", fontSize: "110%", color: "#444"}}

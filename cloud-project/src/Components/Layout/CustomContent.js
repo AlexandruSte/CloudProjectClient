@@ -6,6 +6,7 @@ import Order from "../Content/Order";
 import History from "../Content/History";
 import ActiveOrder from "../Content/ActiveOrder";
 import Default from "../Content/Default";
+import OrdersPlaced from "../Content/OrdersPlaced";
 
 const {Content} = Layout;
 
@@ -26,6 +27,7 @@ const CustomContent = () => {
             <Route exact path='/history/ordered' component={History}/>
             <Route exact path='/history/delivered' component={History}/>
             <Route exact path='/order/active' component={ActiveOrder}/>
+            <Route exact path='/order/placed' component={OrdersPlaced}/>
             <Route exact path='/' component={Default}/>
         </Content>
     );

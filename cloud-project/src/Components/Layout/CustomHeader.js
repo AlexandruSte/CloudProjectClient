@@ -35,6 +35,10 @@ const CustomHeader = () => {
                     </Item>
                 </SubMenu>
                 <Item key="5">
+                    <Link to='/order/placed'/>
+                    Placed orders
+                </Item>
+                <Item key="6">
                     <Link to='/order/active'/>
                     Active order
                 </Item>
